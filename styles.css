@@ -1,5 +1,6 @@
 :root {
-  --bg-colour: transparent; }
+  --bg-colour: transparent;
+  --display: none; }
 
 @font-face {
   font-family: 'Concert One';
@@ -42,6 +43,13 @@ body {
           flex-direction: column;
   height: 100%; }
 
+.blender {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background-color: var(--bg-colour);
+  mix-blend-mode: difference; }
+
 main {
   margin: auto;
   padding: 1em;
@@ -56,29 +64,40 @@ p {
   margin-bottom: 0.5em;
   line-height: 1.3; }
 
+.kaomoji {
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap; }
+
 button {
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+
+.btn-speak {
+  font-size: 125%;
   background: #cb4e4e;
   color: #fff;
   -webkit-box-shadow: 0 4px #ab3c3c;
           box-shadow: 0 4px #ab3c3c;
   top: 2px;
-  border: none;
-  font-family: inherit;
-  font-size: 125%;
-  cursor: pointer;
-  position: relative;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
   width: calc(6ch + 3vmin);
   height: calc(6ch + 3vmin);
   border-radius: 50%;
   margin-bottom: 1em; }
 
-button:active {
+.btn-speak:active {
   -webkit-box-shadow: 0 0 #ab3c3c;
           box-shadow: 0 0 #ab3c3c;
   top: 6px; }
+
+div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 pre {
   background-color: #333;
@@ -89,15 +108,21 @@ pre {
   font-size: 85%;
   text-align: left;
   line-height: 1.3;
-  isolation: isolate; }
+  isolation: isolate;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-right: 0.5em;
+  margin-bottom: 1em; }
 
-.kaomoji {
-  font-family: Arial, Helvetica, sans-serif;
-  white-space: nowrap; }
+.response {
+  display: var(--display); }
 
-.blender {
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background-color: var(--bg-colour);
-  mix-blend-mode: difference; }
+select {
+  position: relative;
+  z-index: 1;
+  font-size: initial; }
+
+.btn-response {
+  font-size: initial;
+  padding: 0.25em 0.5em; }

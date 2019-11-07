@@ -22,8 +22,12 @@
   <main>
     <h1>CSS Colours</h1>
     <p>How well do you know CSS named colours? Test both your knowledge as well as your browser's ability to recognise your accent when you speak English <span class="kaomoji">¯\_(ツ)_/¯</span></p>
-    <button id="activateMic">Speak</button>
+    <button type="button" id="activateMic" class="btn-speak">Speak</button>
     <pre><code id="consoleLog">Click the button then say a colour…</code></pre>
+    <form id="hearResponse" class="response">
+      <select id="pickVoice"></select>
+      <button id="playResponse" class="btn-response">Hear response</button>
+    </form>
   </main>
   <script src="scripts.js"></script>
 </body>
