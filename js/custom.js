@@ -34,7 +34,6 @@
     }, false)
 
     recognition.onresult = function(event) {
-      
       const last = event.results.length - 1;
       const colour = event.results[last][0].transcript;
       const sanitiseColour = colour.replace(/\s/g, '');
