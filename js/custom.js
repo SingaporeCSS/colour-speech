@@ -38,7 +38,6 @@
       const last = event.results.length - 1;
       const colour = event.results[last][0].transcript;
       const sanitiseColour = colour.replace(/\s/g, '');
-      console.log(colour)
       consoleLog.innerHTML = 'You probably said: ' + sanitiseColour + '.\nConfidence: ' + event.results[0][0].confidence;
       readResponse('You probably said: ' + colour);
       docBody.style.setProperty('--bg-colour', sanitiseColour);
@@ -58,7 +57,6 @@
   }
 
   function readResponse(result) {
-    console.log(result)
     docBody.style.setProperty('--display', 'block');
     populateVoiceList();
     // speechSynthesis.addEventListener('voiceschanged', function() {
