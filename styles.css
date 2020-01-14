@@ -14,8 +14,11 @@ html {
   height: 100%;
   font-size: calc(1vmin + 1em); }
 
-.no-speech body::before {
-  content: 'Tragically, your browser does not support the Speech Recognition API. When I wrote this, only Chrome supported it, so maybe try this out with Chrome.';
+.warning {
+  display: none; }
+
+.no-speech .warning {
+  display: block;
   font-family: sans-serif;
   line-height: 1.3;
   font-size: 85%;
